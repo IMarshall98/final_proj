@@ -1,0 +1,27 @@
+body{
+    background-color: #d9d9d9;
+    background-image: url("images/litterBG.jpg");
+}
+
+.menuBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: larger;
+    background-color: #d9d9d9;
+}
+
+.litterImage{
+    border: 2mm solid #2F81F5;
+}
+
+.container{
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: row;
+}
+
+.mapImg{
+    width:140px;
+    height: auto;
+}
