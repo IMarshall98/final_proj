@@ -21,7 +21,32 @@ body{
     flex-direction: row;
 }
 
+.container{
+    padding: 40px
+}
+
+.about{
+    padding: 40px
+}
+
+.mapImage{
+    padding: 20px
+}
 .mapImg{
-    width:140px;
+    width:310px;
     height: auto;
 }
+
+h2{
+    font-weight: bold;
+}
+
+.containerS{
+    display: flex;
+    flex-direction: column;
+    background-color: #d9d9d9;
+}
+
+
+
+
