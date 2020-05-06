@@ -1,0 +1,88 @@
+.menuBar{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    font-size: larger;
+    background-color: #d9d9d9;
+    padding: 40px
+}
+.logo{
+    margin-right: 100px;
+}
+
+.homeBtn{
+    display: flex;
+    padding: 15px 32px;
+    border-radius:2em;
+    background-color:#4eb5f1;
+    color:#FFFFFF;
+    font-size: x-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /*
+    medium margin on left  side,
+    large margin on right,
+    italicized writing*/
+}
+
+body{
+    background-color: #d9d9d9;
+    background-image: url("images/litterBG.jpg");
+}
+
+
+.container{
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: row;
+}
+
+.container{
+    padding: 40px
+}
+
+.about{
+    padding-bottom: 40px;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.mapImage{
+    padding: 20px
+}
+.mapImg{
+    width:310px;
+    height: auto;
+}
+
+h2{
+    font-weight: bold;
+}
+
+.containerS{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #d9d9d9;
+}
+
+.left{
+    background-color:#4eb5f1 ;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.right{
+   padding: 40px
+}
+
+.theMap{
+    height: 180px;
+    width: 200px;
+}
+
+
