@@ -109,8 +109,8 @@
                 for (let i = 0; i < 3; i++) {
                   longLat[i] = jsonData[
                     i + 3
-                  ].geocoded_column_1.coordinates.reverse();
-                  name[i] = jsonData[i + 3].organization;
+                  ].geocoded_column.longitude + geocoded_column.latitude;
+                  name[i] = jsonData[i + 3].organization
                 }
                 for (let j = 0; j < 3; j++) {
                   const mark1 = L.marker(longLat[j]).addTo(mymap);
