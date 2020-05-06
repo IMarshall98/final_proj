@@ -12,6 +12,12 @@
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script>
+   <style>
+       #map1{
+           height: 500px;
+           width: 500px;
+       }
+   </style>
 </head>
 
 <body>
@@ -25,6 +31,49 @@
             <!--<img class = "litterImage" src = "images/litterIcon.png" style="width:320px;height:192px"; >-->
             <!--from clipartkey.com-->
         </div>
+        <div id="map1">
+
+        </div>
+        <script>
+            const mymap = L.map('map1').setView([39.0458, -76.6413], 13);
+            L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', 
+            {
+             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+                id: 'mapbox/streets-v11',
+                tileSize: 512,
+                zoomOffset: -1,
+                accessToken: 'pk.eyJ1IjoiZXJpY25ndXllbjk4IiwiYSI6ImNrOGdodmlzbDAxdGozaW85OTVsN2VmMngifQ.U_gmqOqUXoGHkTu9wuEpBQ'
+            }
+          ).addTo(mymap);
+          
+          const cir1 = L.circle([38.7849, -76.8721], {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5,
+                radius: 500
+        }).addTo(mymap);
+          cir1.bindPopup().openPopup();
+          const foodIns = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
+          let longLat = []
+        let name = []
+
+fetch(foodIns).then(
+    function(response){
+        return response.json();
+    }
+).then(function(jsonData){
+    for(let i = 0; i <3; i++){
+        longLat[i]=(jsonData[i+3].geocoded_column_1.coordinates.reverse())
+        name[i]=jsonData[i+3].name
+       
+    }
+    for(let j = 0;j<3;j++){
+        const mark2 = L.marker(longLat[j]).addTo(mymap);
+        mark2.bindPopup(name[j])
+    }
+});
+        </script>
    </div>
 
    <div class = "wrapper">
@@ -50,6 +99,7 @@
                 <!--from assets.simpleviewinc.com/-->
                 <!--Here need a JS link to Map page-->
             </div>
+            
         </div>
    </div>
     
