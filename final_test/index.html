@@ -96,13 +96,12 @@
               fillOpacity: 0.5,
               radius: 2000,
             }).addTo(mymap);
-            cir1.bindPopup("PG County").openPopup();
-            const foodIns =
-              "https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json";
+            cir1.bindPopup("<b>Need to re-range</b>").openPopup();
+            const TrashIns =
+              "https://data.princegeorgescountymd.gov/resource/9tsa-iner.json";
             let longLat = [];
             let name = [];
-    
-            fetch(foodIns)
+            fetch(TrashIns)
               .then(function (response) {
                 return response.json();
               })
@@ -111,11 +110,11 @@
                   longLat[i] = jsonData[
                     i + 3
                   ].geocoded_column_1.coordinates.reverse();
-                  name[i] = jsonData[i + 3].name;
+                  name[i] = jsonData[i + 3].organization;
                 }
                 for (let j = 0; j < 3; j++) {
-                  const mark2 = L.marker(longLat[j]).addTo(mymap);
-                  mark2.bindPopup(name[j]);
+                  const mark1 = L.marker(longLat[j]).addTo(mymap);
+                  mark1.bindPopup(name[j]);
                 }
               });
           </script>
