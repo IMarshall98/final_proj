@@ -39,87 +39,33 @@
         <!--Link to doc.html-->
         <!--<img class = "litterImage" src = "images/litterIcon.png" style="width:320px;height:192px"; >-->
         <!--from clipartkey.com-->
-      </div>
-      <div id="map1"></div>
+        </div>
       
     </div>
 
     <div class="wrapper">
       <div class="container">
-        <div class="about">
-          <p>
-            About The App
-            <!--Add font-->
-          </p>
-          <p>
-            This app will help users sort through the LitterTRAK API which
-            tracks the litter collection in PG County. The main information that
-            the dataset provides information, such as the amount and type of
-            trash, the location, the watershed that would've likely been
-            affected by the trash, and who cleaned it up.
-          </p>
-          <p>
-            This will make it easier to identify common “problem areas”, meaning
-            areas that are particularly close to watersheds and frequently have
-            large amounts of litter to be picked up.
-          </p>
-          <p>
-            Use this site to keep track of your “Adopt-a-road” location, find
-            areas to clean up for a service project, and educate yourselves and
-            others about what watersheds your trash could be affecting.
-          </p>
-        </div>
+        <div id="map1"></div>
         <!--Here need a link to more information page-->
-        <div class="mapImage">
-          <img class="mapImg" src="images/PGMapImage.jpg" />
-          <!--<img class = "PG Map" src = "images/PGMapImage.jpg";> <!--Resize with CSS-->
-          <!--from assets.simpleviewinc.com/-->
-          <script>
-            const mymap = L.map("map1").setView([39.0458, -76.6413], 13);
-            L.tileLayer(
-              "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
-              {
-                attribution:
-                  'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                maxZoom: 18,
-                id: "mapbox/streets-v11",
-                tileSize: 512,
-                zoomOffset: -1,
-                accessToken:
-                  "pk.eyJ1IjoiZXJpY25ndXllbjk4IiwiYSI6ImNrOGdodmlzbDAxdGozaW85OTVsN2VmMngifQ.U_gmqOqUXoGHkTu9wuEpBQ",
-              }
-            ).addTo(mymap);
-    
-            const cir1 = L.circle([38.7849, -76.8721], {
-              color: "Yellow",
-              fillColor: "#F3FF33",
-              fillOpacity: 0.5,
-              radius: 2000,
-            }).addTo(mymap);
-            cir1.bindPopup("<b>Need to re-range</b>").openPopup();
-            const TrashIns =
-              "https://data.princegeorgescountymd.gov/resource/9tsa-iner.json";
-            let longLat = [];
-            let name = [];
-            fetch(TrashIns)
-              .then(function (response) {
-                return response.json();
-              })
-              .then(function (jsonData) {
-                for (let i = 0; i < 3; i++) {
-                  longLat[i] = jsonData[
-                    i + 3
-                  ].geocoded_column.longitude
-                  name[i] = jsonData[i + 3].organization
-                }
-                for (let j = 0; j < 3; j++) {
-                  const mark1 = L.marker(longLat[j]).addTo(mymap);
-                  mark1.bindPopup(name[j]);
-                }
-              });
-          </script>
+          
         </div>
       </div>
     </div>
+    <script>
+      const mymap = L.map("map1").setView([39.0458, -76.6413], 13);
+      L.tileLayer(
+        "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+        {
+          attribution:
+            'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+          maxZoom: 18,
+          id: "mapbox/streets-v11",
+          tileSize: 512,
+          zoomOffset: -1,
+          accessToken:
+            "pk.eyJ1IjoiZXJpY25ndXllbjk4IiwiYSI6ImNrOGdodmlzbDAxdGozaW85OTVsN2VmMngifQ.U_gmqOqUXoGHkTu9wuEpBQ",
+        }
+      ).addTo(mymap);
+    </script>
   </body>
 </html>
