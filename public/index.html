@@ -69,10 +69,11 @@
         .then((results) => {
           const res = results.data;
           console.log(res);
-          for(i=0; i<res.length; i++){
-            const marker = L.marker([res.lat, res.long]).addTo(mymap);
-            marker.bindPopup("<b>" + res.organization + "</b>").openPopup();
+          for(i=0; i<10; i++){
+            const marker = L.marker([res[i].long, res[i].lat]).addTo(mymap);
+            marker.bindPopup("<b>" + res[i].organization + "</b>").openPopup();
           }
+          return results;
         });
     </script>
   </body>
