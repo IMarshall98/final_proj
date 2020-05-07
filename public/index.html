@@ -29,13 +29,11 @@
     <div class="menuBar">
       <!--this is header-->
       <div class="logo">
-        <button class="homeBtn" type="button">LitterTRAK</button>
+        <button class="homeBtn" onclick="location.href='./index.html'" type="button">LitterTRAK</button>
         <!--Link to index.html. this is home button/icon-->
       </div>
       <div class="menu">
-        <button class="map" type="button">Choose a Location</button
-        ><!--Link to Map page-->
-        <button class="DocBtn" type="button">Documentation</button>
+        <button onclick="location.href='./doc.html'">Documentation</button>
         <!--Link to doc.html-->
         <!--<img class = "litterImage" src = "images/litterIcon.png" style="width:320px;height:192px"; >-->
         <!--from clipartkey.com-->
@@ -66,6 +64,16 @@
             "pk.eyJ1IjoiZXJpY25ndXllbjk4IiwiYSI6ImNrOGdodmlzbDAxdGozaW85OTVsN2VmMngifQ.U_gmqOqUXoGHkTu9wuEpBQ",
         }
       ).addTo(mymap);
+      fetch('./api')
+        .then((response) => response.json())
+        .then((results) => {
+          const res = results.data;
+          console.log(res);
+          for(i=0; i<res.length; i++){
+            const marker = L.marker([res.lat, res.long]).addTo(mymap);
+
+            marker.bindPopup("<b>" + res.organization + "</b>").openPopup();
+          }
     </script>
   </body>
 </html>
