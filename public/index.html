@@ -71,9 +71,9 @@
           console.log(res);
           for(i=0; i<res.length; i++){
             const marker = L.marker([res.lat, res.long]).addTo(mymap);
-
             marker.bindPopup("<b>" + res.organization + "</b>").openPopup();
           }
+        });
     </script>
   </body>
 </html>
