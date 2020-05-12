@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 function processDataForFrontEnd(req, res) {
-  const baseURL = 'https://data.princegeorgescountymd.gov/resource/9tsa-iner.json'; 
+  const baseURL = 'https://data.princegeorgescountymd.gov/resource/9tsa-iner.json';
   fetch(baseURL)
     .then((r) => r.json())
     .then((data) => {
