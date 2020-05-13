@@ -1,7 +1,8 @@
 LitrerTrak
+
 Imari Marshall, Drew Baker, Jarven Lei, Leon Miro, Ryan
 
-***INSERT LINK TO RUNNING APP***
+https://github.com/IMarshall98/final_proj 
 
 The information problem we were trying to solve with this app, was that of real time garbage tracking in the county. 
 This could be used to assess the local efforts of cleanup, and help distribute efforts of community service to areas 
