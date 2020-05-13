@@ -1,4 +1,4 @@
-# LitrerTrak
+# LitterTrak
 
 Imari Marshall, Drew Baker, Jarven Lei, Leon Miro, Ryan
 
