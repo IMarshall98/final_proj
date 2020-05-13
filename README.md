@@ -13,3 +13,12 @@ Our project is intended to visualize the litter problem throughout PG County, Ma
 
 ## Developer Manual
 
+Install the application and dependencies by going to https://github.com/IMarshall98/final_proj and cloning/ downloading the repository. For any missing dependencies, run an npm install on your systems command prompt. 
+
+Simply install the application through the link we provided above and run in any browsers. 
+
+Since it is a web based application, we used Go-Live plug-in in VS studio to run our test and debug. 
+
+When pulling information from our PG county API we used mainly focused on Latitude and longitude coordinates, so that we could visualize the highest concentrations of litter in the county.
+
+In terms of bugs and future implementations for LitterTrak we would focus on representing data on the visual map. This was the focal point of our original project proposal but it turned out to be a much more difficult task than initially intended. We still have trouble rendering the correct map markers on the map even though we had it working at one point. We will continue to keep working on this as well as implement the capability for many more map markers to be displayed. In addition to map markers we would also like to implement other visualisations of litter data in the county.
